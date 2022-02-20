@@ -1,0 +1,47 @@
+﻿@page "/winequalityprediction"
+
+<h3>WineQualityPrediction</h3>
+<EditForm Model="@wine" OnSubmit="@handleSubmit">
+    <div class="form-group">
+        <label for="fixedacidity">FixedAcidity</label>
+        <InputNumber class="form-control" id="fixedacidity" @bind-Value="wine.FixedAcidity"/>
+    </div>  
+    <div class="form-group">
+        <label for="VolatileAcidity">VolatileAcidity</label>
+        <InputNumber class="form-control" id="VolatileAcidity" @bind-Value="wine.VolatileAcidity"/>
+    </div>
+    <div class="form-group">
+        <label for="CitricAcid">CitricAcid</label>
+        <InputNumber class="form-control" id="CitricAcid" @bind-Value="wine.CitricAcid" />
+    </div>
+    <div class="form-group">
+        <label for="Chlorides">Chlorides</label>
+        <InputNumber class="form-control" id="Chlorides" @bind-Value="wine.Chlorides" />
+    </div>
+    <div class="form-group">
+        <label for="TotalSulfurDioxide">TotalSulfurDioxide</label>
+        <InputNumber class="form-control" id="TotalSulfurDioxide" @bind-Value="wine.TotalSulfurDioxide"/>
+    </div>
+    <div class="form-group">
+        <label for="Density">Density</label>
+        <InputNumber class="form-control" id="Density" @bind-Value="wine.Density" />
+    </div>
+    <div class="form-group">
+        <label for="Sulphates">Sulphates</label>
+        <InputNumber class="form-control" id="Sulphates" @bind-Value="wine.Sulphates" />
+    </div>
+    <div class="form-group">
+        <label for="Alcohol">Alcohol</label>
+        <InputNumber class="form-control" id="Alcohol" @bind-Value="wine.Alcohol" />
+    </div>
+    <button class="btn btn-success">
+        Submit
+    </button>
+</EditForm>
+
+@if(wineQuality is not null)
+{
+    <h2>
+       The predicted quality is: @wineQuality.PredictedQuality
+    </h2>
+}

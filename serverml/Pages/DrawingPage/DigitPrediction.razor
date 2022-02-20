@@ -1,0 +1,27 @@
+﻿@page "/canvas"
+
+<h3>DrawingPage</h3>
+
+<canvas
+    @ref="canvasElement"
+
+    width="@canvasBorderX"
+    height="@canvasBorderY">
+
+</canvas>
+
+<button @onclick="predict" class="btn btn-success">
+    predict!
+</button>
+
+<div>
+    @if (prediction is not null)
+    {
+        <p>The probability it's:</p>
+        @for(int i = 0 ; i < prediction.Length; i++)
+        {
+            <p>@i is: @prediction[i] </p><br />
+        }
+    }
+</div>
+
